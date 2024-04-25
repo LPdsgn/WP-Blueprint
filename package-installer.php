@@ -176,56 +176,56 @@ if (!function_exists('package_register_required_plugins')) {
                 'slug'         => 'all-in-one-seo-pack-pro', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/all-in-one-seo-pack-pro.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/all-in-one-seo-pack-pro.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - Image SEO', // The plugin name.
                 'slug'         => 'aioseo-image-seo', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-image-seo.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-image-seo.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - IndexNow', // The plugin name.
                 'slug'         => 'aioseo-index-now', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-index-now.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-index-now.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - Link Assistant', // The plugin name.
                 'slug'         => 'aioseo-link-assistant', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-link-assistant.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-link-assistant.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - Local Business', // The plugin name.
                 'slug'         => 'aioseo-local-business', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-local-business.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-local-business.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - News Sitemap', // The plugin name.
                 'slug'         => 'aioseo-news-sitemap', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-news-sitemap.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-news-sitemap.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - Redirects', // The plugin name.
                 'slug'         => 'aioseo-redirects', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-redirects.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-redirects.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - REST API', // The plugin name.
                 'slug'         => 'aioseo-rest-api', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-rest-api.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/aioseo-rest-api.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'AIOSEO - Video Sitemap', // The plugin name.
@@ -239,42 +239,42 @@ if (!function_exists('package_register_required_plugins')) {
                 'slug'         => 'admin-site-enhancements-pro', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/admin-site-enhancements-pro-6.9.7.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/admin-site-enhancements-pro-6.9.7.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'Complianz', // The plugin name.
                 'slug'         => 'complianz-gdpr-premium', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/complianz-gdpr-premium-7.0.7.zip', // The plugin source.
                 'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/complianz-gdpr-premium-7.0.7.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'Duplicator Pro', // The plugin name.
                 'slug'         => 'duplicator-pro', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/duplicator-pro-4.5.12.zip', // The plugin source.
                 'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/duplicator-pro-4.5.12.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'FileBird', // The plugin name.
                 'slug'         => 'filebird-pro', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/filebird-pro-558.zip', // The plugin source.
                 'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/filebird-pro-558.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'FormCraft', // The plugin name.
                 'slug'         => 'formcraft3', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/formcraft3.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/formcraft3.zip', // If set, overrides default API URL and points to an external URL.
             ),
             array(
                 'name'         => 'Forminator Pro', // The plugin name.
                 'slug'         => 'forminator', // The plugin slug (typically the folder name).
                 'source'       => plugin_dir_path(__FILE__) . 'plugins/forminator-1301.zip', // The plugin source.
                 'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+                'external_url' => 'https://github.com/LPdsgn/WP-Blueprint/blob/main/plugins/forminator-1301.zip', // If set, overrides default API URL and points to an external URL.
             ),
             
 
