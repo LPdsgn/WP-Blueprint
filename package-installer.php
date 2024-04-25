@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Package Instaler plugin.
+ * Package Installer plugin.
  *
  * Example plugin to demonstrate the ability to handle bundled plugins with the
  * TGM Plugin Activation library.
@@ -36,146 +37,41 @@
  */
 
 // Avoid direct calls to this file.
-if ( ! function_exists( 'add_action' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit();
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once plugin_dir_path(__FILE__) . 'class-tgm-plugin-activation.php';
 
-if ( ! function_exists( 'package_register_required_plugins' ) ) {
+if (!function_exists('package_register_required_plugins')) {
 
-	add_action( 'tgmpa_register', 'package_register_required_plugins', 9 );
+    add_action('tgmpa_register', 'package_register_required_plugins', 9);
 
-	/**
-	 * Register the required plugins for this install.
-	 *
-	 * @since 1.0.0
-	 */
-	function package_register_required_plugins() {
-        
-		$plugins = array(
-            
-            // External source plugins
-            array(
-                'name'         => 'Duplicator Pro', // The plugin name.
-                'slug'         => 'duplicator-pro', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/duplicator-pro-4583.zip', // The plugin source.
-                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'FileBird', // The plugin name.
-                'slug'         => 'filebird-pro', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/filebird-pro-508.zip', // The plugin source.
-                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'FormCraft', // The plugin name.
-                'slug'         => 'formcraft3', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/formcraft3.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'Forminator Pro', // The plugin name.
-                'slug'         => 'forminator', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/forminator1231.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'All in One SEO Pro', // The plugin name.
-                'slug'         => 'all-in-one-seo-pack-pro', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/all-in-one-seo-pack-pro.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - Image SEO', // The plugin name.
-                'slug'         => 'aioseo-image-seo', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-image-seo.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - IndexNow', // The plugin name.
-                'slug'         => 'aioseo-index-now', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-index-now.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - Link Assistant', // The plugin name.
-                'slug'         => 'aioseo-link-assistant', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-link-assistant.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - Local Business', // The plugin name.
-                'slug'         => 'aioseo-local-business', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-local-business.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - News Sitemap', // The plugin name.
-                'slug'         => 'aioseo-news-sitemap', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-news-sitemap.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - Redirects', // The plugin name.
-                'slug'         => 'aioseo-redirects', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-redirects.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - REST API', // The plugin name.
-                'slug'         => 'aioseo-rest-api', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-rest-api.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'AIOSEO - Video Sitemap', // The plugin name.
-                'slug'         => 'aioseo-video-sitemap', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/aioseo-video-sitemap.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'Rank Math SEO', // The plugin name.
-                'slug'         => 'seo-by-rank-math', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/seo-by-rank-math.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'Rank Math SEO Pro', // The plugin name.
-                'slug'         => 'seo-by-rank-math-pro', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/seo-by-rank-math-pro.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            array(
-                'name'         => 'Code Snippets Pro', // The plugin name.
-                'slug'         => 'code-snippets-pro', // The plugin slug (typically the folder name).
-                'source'       => plugin_dir_url( __FILE__ ) . 'plugins/code-snippets-pro.zip', // The plugin source.
-                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
-                'external_url' => '', // If set, overrides default API URL and points to an external URL.
-            ),
-            
+    /**
+     * Register the required plugins for this install.
+     *
+     * @since 1.0.0
+     */
+    function package_register_required_plugins()
+    {
+
+        $plugins = array(
+
             //Wordpress repository plugins
             // List of plugins from the WordPress Plugin Repository.
             array(
+                'name'      => 'Admin and Site Enhancements (ASE)',
+                'slug'      => 'admin-site-enhancements',
+                'required'  => true,
+            ),
+            array(
                 'name'      => 'Converter for Media',
                 'slug'      => 'webp-converter-for-media',
+                'required'  => true,
+            ),
+            array(
+                'name'      => 'Complianz',
+                'slug'      => 'complianz-gdpr',
                 'required'  => true,
             ),
             array(
@@ -268,39 +164,136 @@ if ( ! function_exists( 'package_register_required_plugins' ) ) {
                 'slug'      => 'duplicate-post',
                 'required'  => true,
             ),
+            array(
+                'name'      => 'Wordfence',
+                'slug'      => 'wordfence',
+                'required'  => true,
+            ),
+
+            // External source plugins
+            array(
+                'name'         => 'All in One SEO Pro', // The plugin name.
+                'slug'         => 'all-in-one-seo-pack-pro', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/all-in-one-seo-pack-pro.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - Image SEO', // The plugin name.
+                'slug'         => 'aioseo-image-seo', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-image-seo.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - IndexNow', // The plugin name.
+                'slug'         => 'aioseo-index-now', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-index-now.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - Link Assistant', // The plugin name.
+                'slug'         => 'aioseo-link-assistant', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-link-assistant.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - Local Business', // The plugin name.
+                'slug'         => 'aioseo-local-business', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-local-business.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - News Sitemap', // The plugin name.
+                'slug'         => 'aioseo-news-sitemap', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-news-sitemap.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - Redirects', // The plugin name.
+                'slug'         => 'aioseo-redirects', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-redirects.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - REST API', // The plugin name.
+                'slug'         => 'aioseo-rest-api', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-rest-api.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'AIOSEO - Video Sitemap', // The plugin name.
+                'slug'         => 'aioseo-video-sitemap', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/aioseo-video-sitemap.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'Admin Site Enhancements Pro', // The plugin name.
+                'slug'         => 'admin-site-enhancements-pro', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/admin-site-enhancements-pro-6.9.7.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'Complianz', // The plugin name.
+                'slug'         => 'complianz-gdpr-premium', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/complianz-gdpr-premium-7.0.7.zip', // The plugin source.
+                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'Duplicator Pro', // The plugin name.
+                'slug'         => 'duplicator-pro', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/duplicator-pro-4.5.12.zip', // The plugin source.
+                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'FileBird', // The plugin name.
+                'slug'         => 'filebird-pro', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/filebird-pro-558.zip', // The plugin source.
+                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'FormCraft', // The plugin name.
+                'slug'         => 'formcraft3', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/formcraft3.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
+            array(
+                'name'         => 'Forminator Pro', // The plugin name.
+                'slug'         => 'forminator', // The plugin slug (typically the folder name).
+                'source'       => plugin_dir_path(__FILE__) . 'plugins/forminator-1301.zip', // The plugin source.
+                'required'     => false, // If false, the plugin is only 'recommended' instead of required.
+                'external_url' => '', // If set, overrides default API URL and points to an external URL.
+            ),
             
+
         );
-        
+
         $config = array(
-		'id'           => 'Package',                // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => 'plugins',                // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins',  // Menu slug.
-		'parent_slug'  => 'plugins.php',            // Parent menu slug.
-		'capability'   => 'manage_options',         // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
-		'has_notices'  => false,                    // Show admin notices or not.
-		'dismissable'  => true,                     // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',                       // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => true,                     // Automatically activate plugins after installation or not.
-		'message'      => 'Have Fun :D',            // Message to output right before the plugins table.
-        
+            'id'           => 'Package',                // Unique ID for hashing notices for multiple instances of TGMPA.
+            'default_path' => 'plugins',                // Default absolute path to bundled plugins.
+            'menu'         => 'tgmpa-install-plugins',  // Menu slug.
+            'parent_slug'  => 'plugins.php',            // Parent menu slug.
+            'capability'   => 'manage_options',         // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+            'has_notices'  => false,                    // Show admin notices or not.
+            'dismissable'  => true,                     // If false, a user cannot dismiss the nag message.
+            'dismiss_msg'  => '',                       // If 'dismissable' is false, this message will be output at top of nag.
+            'is_automatic' => true,                     // Automatically activate plugins after installation or not.
+            'message'      => 'Have Fun :D',            // Message to output right before the plugins table.
+
         );
 
-	   tgmpa( $plugins, $config );
-        }
-	}
-
-function disable_plugins_updates($value) {
-    $pluginsToDisable = [
-        plugin_dir_url(__FILE__) . 'duplicator-pro/duplicator.php',
-        plugin_dir_url(__FILE__) . 'plugin-folder/plugin.php'
-    ];
-    if (isset($value) && is_object($value)) {
-        foreach ($pluginsToDisable as $plugin) {
-            if (isset($value->response[$plugin])) {
-                unset($value->response[$plugin]);
-            }
-        }
+        tgmpa($plugins, $config);
     }
-    return $value;
 }
-add_filter('site_transient_update_plugins', 'disable_plugins_updates');
